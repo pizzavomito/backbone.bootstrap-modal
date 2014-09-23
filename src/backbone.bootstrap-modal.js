@@ -23,7 +23,7 @@
   };
 
   var template = _.template('\
-    <div class="modal-dialog"><div class="modal-content">\
+    <div class="modal-dialog {{size}}"><div class="modal-content">\
     <% if (title) { %>\
       <div class="modal-header">\
         <% if (allowCancel) { %>\
@@ -149,7 +149,8 @@
         escape: true,
         animate: false,
         template: template,
-        enterTriggersOk: false
+        enterTriggersOk: false,
+        size: '' // modal-lg|modal-sm|empty for medium
       }, options);
     },
 
